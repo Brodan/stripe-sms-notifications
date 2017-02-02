@@ -1,1 +1,1 @@
-web: python strip-sms-notifications/hello.py
+web: python hello.py
