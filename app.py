@@ -15,9 +15,11 @@ def send_sms():
     event_json = request.get_json()
     amount = event_json['data']['object']['amount']
     location = event_json['data']['object']['source']['address_state']
-    message_body = "order for {}".format(amount)
-    message = client.messages.create(to=os.environ['PHONE_NUMBER'], from_=os.environ['TWILIO_NUMBER'],
-                                         body=message_body)
+    message_body = "Hey! Your shop just recieved an order for $"
+        + '{:20,.2f}'.format(amount) + " in " + location + "."
+    message = client.messages.create(to=os.environ['PHONE_NUMBER'],
+                                     from_=os.environ['TWILIO_NUMBER'],
+                                     body=message_body)
     return '', 200
 
 
