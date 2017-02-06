@@ -11,12 +11,11 @@ client = TwilioRestClient(account_sid, auth_token)
 
 
 @app.route("/", methods=['POST'])
-def send_sms():
+def receive_order():
     event_json = request.get_json()
     amount = event_json['data']['object']['amount']
-    location = event_json['data']['object']['source']['address_state']
     message_body = "Hey! Your shop just recieved an order for $" + \
-        str(amount) + " in " + str(location) + "."
+        str(amount) + "."
     message = client.messages.create(to=os.environ['PHONE_NUMBER'],
                                      from_=os.environ['TWILIO_NUMBER'],
                                      body=message_body)
