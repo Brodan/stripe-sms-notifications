@@ -5,11 +5,11 @@
   "keywords": ["python", "stripe", "flask", "twilio"],
   "env": {
       "TWILIO_ACCOUNT_SID": {
-        "description": "Your Twilio account sid. DO NOT SHARE.",
+        "description": "Your Twilio account sid. DO NOT SHARE. Find at https://www.twilio.com/console",
         "required": true
       },
       "TWILIO_AUTH_TOKEN": {
-        "description": "Your Twilio auth token. DO NOT SHARE.",
+        "description": "Your Twilio auth token. DO NOT SHARE. Find at https://www.twilio.com/console",
         "required": true
       },
       "TWILIO_NUMBER": {
